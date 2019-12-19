@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>WYD management</h1>
+    </header>
+
+    <section>
+            <div class="conteiner">
+                <ul>
+                    <h2>Sale list</h2>
+                    {{#each sales}}
+                        <li>
+                            <h4>Client: </h4><p>{{client}} ({{payment}})</p>
+                            <br>
+                            <h4>Saled at: </h4><p>{{dateAt}} R${{cash}}</p>
+                        </li>
+                        <br>
+                    {{else}}
+
+                    {{/each}}
+                </ul>
+            </div>
+            
+            <form action="/add/sale" method="POST">
+            <div class="sale">
+            <h2>Sale register</h2>
+            <label for="client">Client:</label><br>
+            <input type="text" name="client">
+            <br>
+
+            <label for="payment">Payment:</label><br>
+            <input type="text" name="payment">
+            <br>
+
+            Cash:<input type="text" size="1" name="cash" > 
+            Gold:<input type="text" size="1" name="gold" >
+            <br>
+
+            <label for="dateAt">Saled at:</label><br>
+            <input type="text" name="dateAt" placeholder="hhH dd/mm/yy">
+            <br>
+            <input class="button" type="submit" value="Send">
+          
+            </div>
+            </form>
+      
+    </section>
+
+
+    <footer>
+        <h6> 2019 &copy Thalles Garbelotti</h6>
+    </footer>
+    
+</body>
+</html>
